@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "mayonesa",
+    "price": 200,
+    "thumbnail": "https://f.fcdn.app/imgs/a9fa89/www.elclon.com.uy/clonuy/ce5d/original/catalogo/83745-1/460_460/mayonesa-uruguay-d-p-500cc-mayonesa-uruguay-d-p-500cc.jpg"
+  },
+  {
+    "id": 2,
+    "title": "leche",
+    "price": 90,
+    "thumbnail": "https://geant.vteximg.com.br/arquivos/ids/251828-1000-1000/240501.jpg?v=637272144698570000"
+  },
+  {
+    "id": 3,
+    "title": "arroz",
+    "price": 70,
+    "thumbnail": "https://www.saman.uy/wp-content/uploads/2021/07/DonRuggero1KgProducto.png"
+  },
+  {
+    "id": 4,
+    "title": "ketchup",
+    "price": 170,
+    "thumbnail": "https://f.fcdn.app/imgs/ketchup-500cc.jpg"
+  }
+]
