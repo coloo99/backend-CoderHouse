@@ -3,6 +3,9 @@ const handlebars = require("express-handlebars")
 const productosRouter = require("./routes/productos")
 const app = express()
 
+//Donde cargar archivos estaticos
+app.use(express.static('public'))
+
 //Contenedor
 const co = require("./script")
 const conte = new co("productos.txt")

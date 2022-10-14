@@ -1,5 +1,5 @@
 <div>
-    <h1>Tus productos</h1>
+    <h1 class="titleViewProd">Tus productos</h1>
     <table>
         <tr>
             <td>Id</td>
@@ -12,7 +12,7 @@
             <td>{{this.id}}</td>
             <td>{{this.title}}</td>
             <td>{{this.price}}</td>
-            <td>{{this.thumbnail}}</td>
+            <td><img class="imagenProd" src={{this.thumbnail}}/></td>
         </tr>
         {{/each}}
     </table>  
