@@ -40,7 +40,8 @@ tr{
 .titleAddProd{
     margin-left: 170px;
 }
-.inputsDiv{
+form{
+    margin-left: 150px;
     margin-top: 50px;
     width: 300px;
 }

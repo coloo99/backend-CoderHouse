@@ -3,7 +3,7 @@
     "id": 1,
     "title": "mayonesa",
     "price": 200,
-    "thumbnail": "https://f.fcdn.app/imgs/a9fa89/www.elclon.com.uy/clonuy/ce5d/original/catalogo/83745-1/460_460/mayonesa-uruguay-d-p-500cc-mayonesa-uruguay-d-p-500cc.jpg"
+    "thumbnail": "https://www.geant.com.uy/arquivos/ids/282199-300-300/662539.jpg?v=637656910496130000"
   },
   {
     "id": 2,
@@ -15,12 +15,12 @@
     "id": 3,
     "title": "arroz",
     "price": 70,
-    "thumbnail": "https://www.saman.uy/wp-content/uploads/2021/07/DonRuggero1KgProducto.png"
+    "thumbnail": "https://www.geant.com.uy/arquivos/ids/282089-300-300/521100.jpg?v=637656743450630000"
   },
   {
     "id": 4,
     "title": "ketchup",
     "price": 170,
-    "thumbnail": "https://f.fcdn.app/imgs/ketchup-500cc.jpg"
+    "thumbnail": "https://www.geant.com.uy/arquivos/ids/273191-300-300/472144.jpg?v=637571173024130000"
   }
 ]
