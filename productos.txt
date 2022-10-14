@@ -16,11 +16,5 @@
     "title": "arroz",
     "price": 70,
     "thumbnail": "https://www.saman.uy/wp-content/uploads/2021/07/DonRuggero1KgProducto.png"
-  },
-  {
-    "id": 4,
-    "title": "ketchup",
-    "price": 170,
-    "thumbnail": "https://f.fcdn.app/imgs/ketchup-500cc.jpg"
   }
 ]

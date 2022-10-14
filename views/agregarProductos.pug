@@ -1,0 +1,20 @@
+html
+    head
+        title="Home de mis productos"
+        style
+            include styles.css
+    body
+        div(class="contenedorDiv")
+            h1(class="titleAddProd") Agregar un producto
+            nav
+                a(href='../productos/agregarProductos') Agregar Productos
+                a(href='../productos/mostrarProductos') mostrarProductos
+                div(class="inputsDiv")
+                    form(method='post' action='/productos/')
+                        input(type='text' name='title' id='title' placeHolder="Title")
+                        input(type='number' name='price' id='price' placeHolder="Precio")
+                        input(type='text' name='thumbnail' id='thumbnail' placeHolder="Imagen")
+                        button(type="submit") Enviar
+    footer="By Lucas Yacusa"
+    
+

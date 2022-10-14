@@ -1,0 +1,25 @@
+html
+    head
+        title="Home de mis productos"
+        style
+            include styles.css
+    body
+        div
+            h1(class="titleViewProd") Tus productos
+            nav
+                a(href='../productos/agregarProductos') Agregar Productos
+                a(href='../productos/mostrarProductos') mostrarProductos
+            table
+                tr
+                    td="Id"
+                    td="Title"
+                    td="Price"
+                    td="Img"
+                each producto in productos
+                    tr
+                        td= producto.id
+                        td= producto.title
+                        td= producto.price
+                        td
+                            img(class="imagenProd" src=producto.thumbnail)
+    footer="By Lucas Yacusa"
