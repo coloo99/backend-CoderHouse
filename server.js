@@ -1,5 +1,4 @@
 const express = require("express");
-const handlebars = require("express-handlebars")
 const productosRouter = require("./routes/productos")
 const app = express()
 
@@ -17,11 +16,8 @@ app.listen(8080, ()=>console.log("server is listening on port 8080"))
 
 app.use("/productos", productosRouter)
 
-//Defino el motor de plantillas
-app.engine("handlebars",handlebars.engine())
-
 //Ubico la carpeta o directorio donde ubico los templates .handlebars
 app.set("views", "./views")
 
 //Defino el motor para express
-app.set("view engine", "handlebars")
+app.set("view engine", "ejs")

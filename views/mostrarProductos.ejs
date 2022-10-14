@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include("./partials/navBar.ejs") %>
+    <div>
+        <h1 class="titleViewProd">Tus productos</h1>
+        <table>
+            <tr>
+                <td>Id</td>
+                <td>Title</td>
+                <td>Price</td>
+                <td>Img</td>
+            </tr>
+            <% productos.forEach(producto =>{ %>
+                <tr>
+                    <td><%= producto.id %></td>
+                    <td><%= producto.title %></td>
+                    <td><%= producto.price %></td>
+                    <td><img class="imagenProd" src=<%= producto.thumbnail %>/></td>
+                </tr>
+            <% }) %>
+        </table>  
+    </div>
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>
