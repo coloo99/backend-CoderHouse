@@ -1,4 +1,4 @@
-/*General*/
+
 nav{
     margin-top: 20px;
     margin-left: 160px;
@@ -16,7 +16,6 @@ footer{
     margin-left: 30px;
 }
 
-/*Mostrar productos*/
 .titleViewProd{
     margin-left: 220px;
 }
@@ -36,7 +35,6 @@ tr{
     text-align: center;
 }
 
-/*Agregar Productos*/
 .titleAddProd{
     margin-left: 170px;
 }
@@ -58,3 +56,18 @@ button{
     border-radius: 10px;
     border: 0px;
 }
+
+#email{
+    color: blue;
+}
+
+#m{
+    font-style: italic;
+    color: green;
+}
+
+#fecha{
+    color: brown;
+}
+
+

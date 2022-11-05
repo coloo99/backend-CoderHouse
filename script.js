@@ -1,44 +1,30 @@
 const fs = require("fs");
+const knex = require('knex')
+const {productosOptions} = require('./data/configDb')
 
 class Contenedor{
     constructor(nameFile){
         this.nameFile = nameFile;
+        this.database = knex(productosOptions);
+
+        if(!this.database.schema.hasTable('productos')){
+            this.database.schema.createTable('productos',tabla =>{
+                tabla.increments('id').primary();
+                tabla.string('title',50);
+                tabla.float('price');
+                tabla.string('thumbnail',150)
+            }).then((result) => {
+                console.log("creado");
+            }).catch((err) => {
+                console.log(err);
+            });
+        }
     }
 
     save = async(product)=>{
         try {
-            //leer el archivo existe
-            let newProduct = {}
-            if(fs.existsSync(this.nameFile)){
-                const contenido = await fs.promises.readFile(this.nameFile,"utf8");
-                if(contenido){
-                    const productos = JSON.parse(contenido);
-                    const lastIdAdded = productos.reduce((acc,item)=>item.id > acc ? acc = item.id : acc, 0);
-                    newProduct={
-                        id: lastIdAdded+1,
-                        ...product
-                    }
-                    productos.push(newProduct);
-                    await fs.promises.writeFile(this.nameFile, JSON.stringify(productos, null, 2))
-                } else{
-                    //si no existe ningun contenido en el archivo
-                    newProduct={
-                        id:1,
-                        ...product
-                    }
-                    //creamos el archivo
-                    await fs.promises.writeFile(this.nameFile, JSON.stringify([newProduct], null, 2));
-                }
-            } else{
-                // si el archivo no existe
-                newProduct={
-                    id:1,
-                    ...product
-                }
-                //creamos el archivo
-                await fs.promises.writeFile(this.nameFile, JSON.stringify([newProduct], null, 2));
-            }
-            return newProduct
+            console.log(product);
+            await this.database('productos').insert(product)
         } catch (error) {
             console.log(error);
         }
@@ -46,16 +32,7 @@ class Contenedor{
 
     getById = async(id)=>{
         try {
-            if(fs.existsSync(this.nameFile)){
-                const contenido = await fs.promises.readFile(this.nameFile,"utf8");
-                if(contenido){
-                    const productos = JSON.parse(contenido);
-                    const producto = productos.find(item=>item.id===id);
-                    return producto
-                } else{
-                    return "El archivo esta vacio"
-                }
-            }
+            return this.database('productos').select().where({ id: id })
         } catch (error) {
             console.log(error)
         }
@@ -63,9 +40,7 @@ class Contenedor{
 
     getAll = async()=>{
         try {
-            const contenido = await fs.promises.readFile(this.nameFile,"utf8");
-            const productos = JSON.parse(contenido);
-            return productos
+            return this.database('productos').select()
         } catch (error) {
             console.log(error)
         }
@@ -73,10 +48,7 @@ class Contenedor{
 
     deleteById = async(id)=>{
         try {
-            const contenido = await fs.promises.readFile(this.nameFile,"utf8");
-            const productos = JSON.parse(contenido);
-            const newProducts = productos.filter(item=>item.id!==id);
-            await fs.promises.writeFile(this.nameFile, JSON.stringify(newProducts, null, 2));
+            return this.database('productos').where({id:id}).del()
         } catch (error) {
             console.log(error)
         }
@@ -84,7 +56,7 @@ class Contenedor{
 
     deleteAll = async()=>{
         try {
-            await fs.promises.writeFile(this.nameFile, JSON.stringify([]));
+            return this.database('productos').del()
         } catch (error) {
             console.log(error)
         }
